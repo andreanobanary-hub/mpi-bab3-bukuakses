@@ -187,6 +187,34 @@ export const PrintableRplModule: React.FC<PrintableRplModuleProps> = ({ onBackTo
           </div>
         </div>
 
+        {/* Pengesahan Dokumen RPL BK Utama */}
+        <div className="pt-6 pb-2 avoid-break">
+          <div className="grid grid-cols-2 gap-8 text-xs text-slate-800">
+            <div>
+              <p className="text-slate-700">Mengetahui,</p>
+              <p className="font-semibold text-slate-900 mt-0.5">{rplDocumentation.pengesahan.kepalaSekolah.jabatan}</p>
+              <div className="h-16 sm:h-20"></div>
+              <p className="font-bold text-slate-900 underline tracking-wide">
+                {rplDocumentation.pengesahan.kepalaSekolah.nama}
+              </p>
+              <p className="font-mono text-[11px] text-slate-700 mt-0.5">
+                NIP. {rplDocumentation.pengesahan.kepalaSekolah.nip}
+              </p>
+            </div>
+            <div className="pl-4 sm:pl-16">
+              <p className="text-slate-700">........................., {rplDocumentation.pengesahan.tempatTanggal}</p>
+              <p className="font-semibold text-slate-900 mt-0.5">{rplDocumentation.pengesahan.guruBK.jabatan}</p>
+              <div className="h-16 sm:h-20"></div>
+              <p className="font-bold text-slate-900 underline tracking-wide">
+                {rplDocumentation.pengesahan.guruBK.nama}
+              </p>
+              <p className="font-mono text-[11px] text-slate-700 mt-0.5">
+                NIP. {rplDocumentation.pengesahan.guruBK.nip}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* LAMPIRAN 1: INSTRUMEN ASESMEN AWAL (18 BUTIR) */}
         <div className="page-break pt-6 space-y-4">
           <div className="text-center pb-2 border-b border-slate-300">
@@ -348,21 +376,29 @@ export const PrintableRplModule: React.FC<PrintableRplModuleProps> = ({ onBackTo
             </tbody>
           </table>
 
-          {/* Teacher Signature Footnote */}
-          <div className="pt-8 flex justify-between text-xs text-slate-700">
+          {/* Pengesahan Evaluasi & Pelaksanaan */}
+          <div className="pt-8 grid grid-cols-2 gap-8 text-xs text-slate-800 avoid-break">
             <div>
-              <p>Mengetahui,</p>
-              <p className="font-semibold mt-1">Kepala Sekolah</p>
-              <div className="h-16"></div>
-              <p className="font-bold underline">___________________________</p>
-              <p>NIP. ........................................</p>
+              <p className="text-slate-700">Mengetahui,</p>
+              <p className="font-semibold text-slate-900 mt-0.5">{rplDocumentation.pengesahan.kepalaSekolah.jabatan}</p>
+              <div className="h-16 sm:h-20"></div>
+              <p className="font-bold text-slate-900 underline tracking-wide">
+                {rplDocumentation.pengesahan.kepalaSekolah.nama}
+              </p>
+              <p className="font-mono text-[11px] text-slate-700 mt-0.5">
+                NIP. {rplDocumentation.pengesahan.kepalaSekolah.nip}
+              </p>
             </div>
-            <div>
-              <p>Disusun oleh,</p>
-              <p className="font-semibold mt-1">Guru Bimbingan dan Konseling</p>
-              <div className="h-16"></div>
-              <p className="font-bold underline">Ibu Nadia, S.Pd., M.Pd.</p>
-              <p>NIP. ........................................</p>
+            <div className="pl-4 sm:pl-16">
+              <p className="text-slate-700">........................., {rplDocumentation.pengesahan.tempatTanggal}</p>
+              <p className="font-semibold text-slate-900 mt-0.5">{rplDocumentation.pengesahan.guruBK.jabatan}</p>
+              <div className="h-16 sm:h-20"></div>
+              <p className="font-bold text-slate-900 underline tracking-wide">
+                {rplDocumentation.pengesahan.guruBK.nama}
+              </p>
+              <p className="font-mono text-[11px] text-slate-700 mt-0.5">
+                NIP. {rplDocumentation.pengesahan.guruBK.nip}
+              </p>
             </div>
           </div>
         </div>

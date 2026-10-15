@@ -758,5 +758,19 @@ export const rplDocumentation = {
   evaluasi: {
     proses: "Mengamati antusiasme, partisipasi aktif dalam diskusi kelompok, kerja sama tim, dan kejujuran saat simulasi sosiodrama.",
     hasil: "Mengukur peningkatan pemahaman melalui skor asesmen diri awal vs akhir, kelengkapan LKPD rencana peluang usaha, dan komitmen etika pribadi siswa."
+  },
+  pengesahan: {
+    tempatTanggal: "Juli 2026",
+    kepalaSekolah: {
+      jabatan: "Kepala Sekolah",
+      nama: "ANI NURHAYATI, S.Pd., M.Pd.",
+      nip: "19800419 200604 2 005"
+    },
+    guruBK: {
+      jabatan: "Guru Bimbingan dan Konseling",
+      nama: "ANDRIYONO, S.Pd.",
+      nip: "19800222 200501 1 007"
+    }
   }
 };
+
