@@ -1,0 +1,6 @@
+{
+  "name": "Modul Interaktif BK: Jiwa Kewirausahaan Remaja",
+  "description": "Modul Pembelajaran Interaktif Bimbingan dan Konseling berbasis Experiential Learning untuk menumbuhkan jiwa kewirausahaan siswa SMP/SMA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
