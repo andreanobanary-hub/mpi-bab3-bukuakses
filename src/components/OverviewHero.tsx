@@ -1,18 +1,53 @@
-import React from 'react';
-import { generalInfo } from '../data/moduleData';
-import { Compass, Lightbulb, HeartHandshake, Rocket, Target, Award, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { generalInfo, deepLearningPillars } from '../data/moduleData';
+import {
+  Compass,
+  Lightbulb,
+  HeartHandshake,
+  Rocket,
+  Award,
+  ArrowRight,
+  ShieldCheck,
+  Search,
+  Users,
+  MessageSquare,
+  Globe,
+  Sparkles,
+  CheckCircle2
+} from 'lucide-react';
 
 interface OverviewHeroProps {
   onStartAssessment: () => void;
 }
 
 export const OverviewHero: React.FC<OverviewHeroProps> = ({ onStartAssessment }) => {
+  const [selectedPillarId, setSelectedPillarId] = useState<string | null>(null);
+
+  const getPillarIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'ShieldCheck':
+        return <ShieldCheck className="w-5 h-5" />;
+      case 'Search':
+        return <Search className="w-5 h-5" />;
+      case 'Lightbulb':
+        return <Lightbulb className="w-5 h-5" />;
+      case 'Users':
+        return <Users className="w-5 h-5" />;
+      case 'MessageSquare':
+        return <MessageSquare className="w-5 h-5" />;
+      case 'Globe':
+        return <Globe className="w-5 h-5" />;
+      default:
+        return <Sparkles className="w-5 h-5" />;
+    }
+  };
+
   return (
     <div className="space-y-12">
       {/* Hero Header Area */}
       <div className="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm relative overflow-hidden">
         <div className="max-w-3xl space-y-4">
-          <div className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+          <div className="flex items-center gap-2 text-xs text-slate-500 font-medium flex-wrap">
             <span>Bimbingan Klasikal BK</span>
             <span aria-hidden="true">·</span>
             <span>Fase D / E (SMP & SMA)</span>
@@ -20,6 +55,8 @@ export const OverviewHero: React.FC<OverviewHeroProps> = ({ onStartAssessment })
             <span>2 x 45 Menit</span>
             <span aria-hidden="true">·</span>
             <span>Experiential Learning</span>
+            <span aria-hidden="true">·</span>
+            <span>Deep Learning 6C</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
@@ -48,7 +85,7 @@ export const OverviewHero: React.FC<OverviewHeroProps> = ({ onStartAssessment })
           </div>
         </div>
 
-        {/* Decorative subtle visual illustration */}
+        {/* Decorative visual card */}
         <div className="hidden lg:block absolute right-8 bottom-6 w-80 h-72 pointer-events-none opacity-90">
           <div className="w-full h-full bg-linear-to-br from-amber-50 to-orange-100/70 border border-amber-200/60 rounded-2xl p-6 flex flex-col justify-between">
             <div className="flex items-center justify-between text-xs text-amber-800 font-semibold">
@@ -70,7 +107,7 @@ export const OverviewHero: React.FC<OverviewHeroProps> = ({ onStartAssessment })
               </div>
             </div>
             <div className="text-[11px] text-slate-500 text-right italic">
-              Kurikulum Merdeka · Bimbingan Karier
+              Pembelajaran Mendalam · Deep Learning
             </div>
           </div>
         </div>
@@ -78,15 +115,13 @@ export const OverviewHero: React.FC<OverviewHeroProps> = ({ onStartAssessment })
 
       {/* 3 Developmental Objectives */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-              Tujuan Layanan BK (3 Tahapan Perkembangan)
-            </h2>
-            <p className="text-xs text-slate-500">
-              Rumusan kompetensi komprehensif dari ranah Kognitif, Afektif, hingga Psikomotor
-            </p>
-          </div>
+        <div>
+          <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+            Tujuan Layanan BK (3 Tahapan Perkembangan)
+          </h2>
+          <p className="text-xs text-slate-500">
+            Rumusan kompetensi komprehensif dari ranah Kognitif, Afektif, hingga Psikomotor
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -204,19 +239,80 @@ export const OverviewHero: React.FC<OverviewHeroProps> = ({ onStartAssessment })
         </div>
       </div>
 
-      {/* Profil Pelajar Pancasila Strip */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-3">
-        <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Target className="w-4 h-4 text-amber-600" />
-          <span>Penguatan Dimensi Profil Pelajar Pancasila</span>
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
-          {generalInfo.profilPelajarPancasila.map((dimensi, idx) => (
-            <div key={idx} className="flex items-start gap-2 text-xs text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-              <span className="font-semibold text-amber-700 shrink-0">✓</span>
-              <span>{dimensi}</span>
+      {/* Penguatan Karakter & Kompetensi (Deep Learning) */}
+      <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-100">
+          <div>
+            <div className="flex items-center gap-2 text-xs text-amber-800 font-semibold mb-1">
+              <Compass className="w-4 h-4 text-amber-600" />
+              <span>Pendekatan Pembelajaran Mendalam (Deep Learning 6C)</span>
             </div>
-          ))}
+            <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+              Penguatan Karakter & Kompetensi (Deep Learning)
+            </h3>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Integrasi 6 dimensi kompetensi abad 21 untuk membina wirausahawan muda yang tangguh, inovatif, dan beretika.
+            </p>
+          </div>
+          <div className="text-xs text-slate-400 hidden sm:block">
+            Klik kartu untuk menandai fokus kompetensi
+          </div>
+        </div>
+
+        {/* 6 Interactive Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {deepLearningPillars.map((pillar) => {
+            const isSelected = selectedPillarId === pillar.id;
+            return (
+              <div
+                key={pillar.id}
+                onClick={() => setSelectedPillarId(isSelected ? null : pillar.id)}
+                className={`border rounded-xl p-5 cursor-pointer transition-all flex flex-col justify-between ${
+                  isSelected
+                    ? 'bg-amber-50/70 border-amber-500 ring-2 ring-amber-200/80 shadow-xs'
+                    : 'bg-white border-slate-200 hover:border-amber-400 hover:shadow-xs'
+                }`}
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div
+                      className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
+                        isSelected
+                          ? 'bg-amber-600 text-white'
+                          : 'bg-amber-50 text-amber-700'
+                      }`}
+                    >
+                      {getPillarIcon(pillar.iconName)}
+                    </div>
+                    <span className="font-mono text-xs font-bold text-slate-400">
+                      0{pillar.number}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 leading-snug">
+                      {pillar.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-100/80 flex items-center justify-between text-[11px]">
+                  <span className="font-medium text-slate-500 truncate max-w-[210px]">
+                    Fokus: {pillar.focusArea}
+                  </span>
+                  {isSelected && (
+                    <span className="text-amber-700 font-semibold flex items-center gap-1 shrink-0">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>Aktif</span>
+                    </span>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

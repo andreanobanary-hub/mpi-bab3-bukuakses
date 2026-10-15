@@ -8,8 +8,72 @@ import {
   RolePlayCharacter,
   RolePlayDialogue,
   RubricCriterion,
-  OpportunityCanvasData
+  OpportunityCanvasData,
+  DeepLearningPillar
 } from '../types';
+
+export const deepLearningPillars: DeepLearningPillar[] = [
+  {
+    id: 'character',
+    number: 1,
+    pillarEn: 'Character',
+    pillarId: 'Karakter',
+    title: 'Character (Karakter)',
+    description: 'Membangun ketangguhan, etika berwirausaha, tanggung jawab, dan integritas diri.',
+    focusArea: 'Resiliensi pantang menyerah & integritas moral bertransaksi',
+    iconName: 'ShieldCheck'
+  },
+  {
+    id: 'critical-thinking',
+    number: 2,
+    pillarEn: 'Critical Thinking',
+    pillarId: 'Berpikir Kritis',
+    title: 'Critical Thinking (Berpikir Kritis)',
+    description: 'Mampu menganalisis masalah nyata, membaca peluang pasar, dan merumuskan solusi bisnis.',
+    focusArea: 'Problem hunting & analisis kebutuhan lingkungan sekitar',
+    iconName: 'Search'
+  },
+  {
+    id: 'creativity',
+    number: 3,
+    pillarEn: 'Creativity',
+    pillarId: 'Kreativitas',
+    title: 'Creativity (Kreativitas)',
+    description: 'Menghasilkan gagasan produk/jasa yang inovatif dan orisinal melalui simulasi usaha.',
+    focusArea: 'Diferensiasi karya orisinal & inovasi nilai tambah unik',
+    iconName: 'Lightbulb'
+  },
+  {
+    id: 'collaboration',
+    number: 4,
+    pillarEn: 'Collaboration',
+    pillarId: 'Kolaborasi',
+    title: 'Collaboration (Kolaborasi)',
+    description: 'Bekerja sama secara aktif dan berbagi peran dalam simulasi pasar mini/kelompok.',
+    focusArea: 'Sinergi tim, pembagian peran adil, & saling melengkapi',
+    iconName: 'Users'
+  },
+  {
+    id: 'communication',
+    number: 5,
+    pillarEn: 'Communication',
+    pillarId: 'Komunikasi',
+    title: 'Communication (Komunikasi)',
+    description: 'Menyampaikan ide penawaran, presentasi nilai produk, dan bernegosiasi secara efektif.',
+    focusArea: 'Komunikasi asertif, keramahan, & negosiasi win-win',
+    iconName: 'MessageSquare'
+  },
+  {
+    id: 'citizenship',
+    number: 6,
+    pillarEn: 'Citizenship',
+    pillarId: 'Kepedulian Sosial',
+    title: 'Citizenship (Kepedulian Sosial)',
+    description: 'Menciptakan ide usaha yang memberikan dampak positif dan beretika bagi lingkungan sekitar.',
+    focusArea: 'Social entrepreneurship & keberlanjutan lingkungan',
+    iconName: 'Globe'
+  }
+];
 
 export const generalInfo = {
   title: "Menumbuhkan Jiwa Kewirausahaan bagi Remaja",
@@ -17,14 +81,8 @@ export const generalInfo = {
   targetGroup: "Siswa SMP / SMA (Fase D / E - Kurikulum Merdeka)",
   serviceType: "Layanan Bimbingan Klasikal Bimbingan dan Konseling (BK)",
   timeAllocation: "2 Pertemuan (2 x 45 Menit)",
-  pedagogicalApproach: "Experiential Learning (David Kolb)",
-  profilPelajarPancasila: [
-    "Mandiri (Mengembangkan inisiatif dan tanggung jawab pribadi)",
-    "Kreatif (Mampu memodifikasi dan menghasilkan karya orisinal)",
-    "Gotong Royong (Mampu bekerja sama dan berkolaborasi dalam tim)",
-    "Bernalar Kritis (Mampu mengidentifikasi masalah dan peluang solusi)",
-    "Berakhlak Mulia (Menjunjung tinggi etika, kejujuran, dan keadilan)"
-  ],
+  pedagogicalApproach: "Experiential Learning (David Kolb) & Deep Learning 6C",
+  deepLearningApproach: "Pendekatan Pembelajaran Mendalam (Deep Learning) 6C: Character, Critical Thinking, Creativity, Collaboration, Communication, Citizenship",
   tujuanLayanan: {
     pengenalan: {
       tahap: "1. Tahap Pengenalan (Kognitif - C4)",

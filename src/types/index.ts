@@ -114,3 +114,15 @@ export interface RubricCriterion {
     descriptor: string;
   }[];
 }
+
+export interface DeepLearningPillar {
+  id: string;
+  number: number;
+  pillarEn: string;
+  pillarId: string;
+  title: string;
+  description: string;
+  focusArea: string;
+  iconName: string;
+}
+

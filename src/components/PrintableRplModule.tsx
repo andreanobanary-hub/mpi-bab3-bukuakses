@@ -7,7 +7,8 @@ import {
   eightCharacteristics,
   businessEthicsPillars,
   rolePlayDialogues,
-  sociodramaRubric
+  sociodramaRubric,
+  deepLearningPillars
 } from '../data/moduleData';
 import { Printer, Copy, Check, FileText, ArrowLeft } from 'lucide-react';
 
@@ -118,16 +119,19 @@ export const PrintableRplModule: React.FC<PrintableRplModuleProps> = ({ onBackTo
           </div>
         </div>
 
-        {/* Section 2: Profil Pelajar Pancasila */}
+        {/* Section 2: Penguatan Karakter & Kompetensi (Deep Learning) */}
         <div className="space-y-2">
           <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1">
-            II. DIMENSI PROFIL PELAJAR PANCASILA
+            II. PENGUATAN KARAKTER & KOMPETENSI (DEEP LEARNING 6C)
           </h2>
-          <ul className="list-disc list-inside text-xs space-y-1 text-slate-700">
-            {generalInfo.profilPelajarPancasila.map((dim, idx) => (
-              <li key={idx}>{dim}</li>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
+            {deepLearningPillars.map((p) => (
+              <div key={p.id} className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg">
+                <span className="font-bold text-slate-900">{p.number}. {p.title}:</span>
+                <p className="text-slate-600 mt-0.5">{p.description}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* Section 3: Tujuan Layanan dalam 3 Tahapan Perkembangan */}
